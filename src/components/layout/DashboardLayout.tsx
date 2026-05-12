@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, Outlet } from 'react-router-dom';
 import { 
   LayoutDashboard, 
   Mic2, 
@@ -12,8 +12,7 @@ import {
   ChevronRight,
   LogOut,
   Zap,
-  User,
-  Plus
+  User
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Badge } from '../ui/Badge';
@@ -39,7 +38,7 @@ const NavItem = ({ icon: Icon, label, to, active, collapsed }: { icon: any, labe
   </Link>
 );
 
-const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const DashboardLayout: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
 
@@ -155,7 +154,7 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
               transition={{ duration: 0.3 }}
               className="h-full"
             >
-              {children}
+              <Outlet />
             </motion.div>
           </AnimatePresence>
         </div>

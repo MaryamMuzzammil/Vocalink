@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
   TrendingUp, 
-  Users, 
   PhoneCall, 
   Clock, 
   ArrowUpRight, 
@@ -10,7 +9,6 @@ import {
   MessageSquare,
   ChevronRight,
   Plus,
-  BarChart3,
   Package
 } from 'lucide-react';
 import { Card } from '../../components/ui/Card';
